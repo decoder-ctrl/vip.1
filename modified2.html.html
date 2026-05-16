@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Smart Web</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(to bottom right,#0f172a,#1e293b);
+            color:white;
+            line-height:1.7;
+            overflow-x:hidden;
+        }
+
+        /* HERO */
+
+        .hero{
+            background:linear-gradient(135deg,#2563eb,#0f172a);
+            padding:80px 20px;
+            text-align:center;
+            position:relative;
+        }
+
+        .hero::after{
+            content:'';
+            position:absolute;
+            width:250px;
+            height:250px;
+            background:rgba(255,255,255,0.08);
+            border-radius:50%;
+            top:-80px;
+            right:-80px;
+        }
+
+        .hero h1{
+            font-size:48px;
+            margin-bottom:20px;
+            letter-spacing:2px;
+            text-shadow:0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .hero p{
+            max-width:850px;
+            margin:auto;
+            font-size:18px;
+            color:#e2e8f0;
+        }
+
+        /* CONTAINER */
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:60px auto;
+        }
+
+        /* INFO BOX */
+
+        .info-box{
+            background:rgba(255,255,255,0.06);
+            backdrop-filter:blur(10px);
+            border:1px solid rgba(255,255,255,0.1);
+            padding:40px;
+            border-radius:25px;
+            margin-bottom:50px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .info-box h2{
+            color:#60a5fa;
+            margin-bottom:20px;
+            font-size:36px;
+        }
+
+        .info-box p{
+            color:#d1d5db;
+            font-size:18px;
+        }
+
+        /* CARDS */
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.08);
+            backdrop-filter:blur(10px);
+            padding:35px 25px;
+            border-radius:25px;
+            text-align:center;
+            transition:0.4s;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .card::before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:-100%;
+            width:100%;
+            height:100%;
+            background:linear-gradient(
+                120deg,
+                transparent,
+                rgba(255,255,255,0.12),
+                transparent
+            );
+            transition:0.7s;
+        }
+
+        .card:hover::before{
+            left:100%;
+        }
+
+        .card:hover{
+            transform:translateY(-12px) scale(1.02);
+            box-shadow:0 15px 35px rgba(37,99,235,0.4);
+        }
+
+        .card h3{
+            font-size:30px;
+            margin-bottom:15px;
+        }
+
+        .price{
+            font-size:40px;
+            font-weight:bold;
+            margin-bottom:20px;
+            color:#60a5fa;
+        }
+
+        .card p{
+            color:#d1d5db;
+            margin-bottom:30px;
+            font-size:16px;
+        }
+
+        /* BUTTONS */
+
+        .btn{
+            display:inline-block;
+            padding:14px 35px;
+            border-radius:50px;
+            text-decoration:none;
+            background:linear-gradient(135deg,#2563eb,#3b82f6);
+            color:white;
+            font-weight:bold;
+            transition:0.3s;
+            box-shadow:0 5px 15px rgba(37,99,235,0.4);
+        }
+
+        .btn:hover{
+            transform:scale(1.08);
+            background:linear-gradient(135deg,#1d4ed8,#60a5fa);
+        }
+
+        /* FOOTER */
+
+        footer{
+            margin-top:70px;
+            text-align:center;
+            padding:25px;
+            background:#020617;
+            color:#94a3b8;
+            font-size:15px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:34px;
+            }
+
+            .info-box h2{
+                font-size:28px;
+            }
+
+            .price{
+                font-size:32px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>VIP CARDS & RESERVATION MANAGEMENT</h1>
+
+        <p>
+            Exclusive VIP access for dedicated fans who wish to enjoy
+            premium services, private reservations, special invitations,
+            and direct connection with VIP management personnel.
+        </p>
+
+    </section>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+
+        <!-- ABOUT -->
+
+        <div class="info-box">
+
+            <h2>About The VIP Membership</h2>
+
+            <p>
+                The VIP Membership is a personalized premium card designed
+                specifically for each member. Your card includes your photo,
+                membership name, unique membership code, and official
+                management signature.
+                <br><br>
+
+                Members receive exclusive VIP services, priority invitations,
+                early movie project updates, private reservations with our VIPs,
+                and complete access to reservation and flight assistance services.
+            </p>
+
+        </div>
+
+        <!-- VIP CARDS -->
+
+        <div class="cards">
+
+            <!-- REGULAR -->
+
+            <div class="card">
+
+                <h3>Regular VIP</h3>
+
+                <div class="price">$4,500</div>
+
+                <p>
+                    Entry-level VIP membership with exclusive fan benefits
+                    and premium event access.
+                </p>
+
+                <a href="payment2.html" class="btn">
+                    Select Plan
+                </a>
+
+            </div>
+
+            <!-- PREMIUM -->
+
+            <div class="card">
+
+                <h3>Premium Card</h3>
+
+                <div class="price">$8,500</div>
+
+                <p>
+                    Enhanced VIP experience including priority reservations
+                    and premium support services.
+                </p>
+
+                <a href="payment2.html" class="btn">
+                    Select Plan
+                </a>
+
+            </div>
+
+            <!-- GOLD -->
+
+            <div class="card">
+
+                <h3>Gold Card</h3>
+
+                <div class="price">$15,000</div>
+
+                <p>
+                    Ultimate luxury VIP package with maximum access
+                    and elite private benefits.
+                </p>
+
+                <a href="payment2.html" class="btn">
+                    Select Plan
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 VIP Smart Web | All Rights Reserved
+    </footer>
+
+</body>
+</html>

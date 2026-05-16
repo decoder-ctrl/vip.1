@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e9ebb4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(29, 52, 77, 0.2);
+        }
+
+        h1 {
+            color: #1d277e;
+        }
+
+        .payment-method {
+            border: 2px solid #162557;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .payment-method:hover {
+            background-color: #b4cadd;
+            border-color: #007BFF;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #163251;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #143253;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> Select Payment Method</h1>
+
+        <div class="payment-method">
+            <label>
+                <input type="radio" name="payment" value="Credit Card">
+                Credit / Debit Card
+            </label>
+        </div>
+
+        <div class="payment-method">
+            <label>
+                <input type="radio" name="payment" value="PayPal">
+                PayPal
+            </label>
+        </div>
+
+        <div class="payment-method">
+            <label>
+                <input type="radio" name="payment" value="bitcoin wallet">
+                bitcoin wallet
+            </label>
+        </div>
+
+        <div class="payment-method">
+            <label>
+                <input type="radio" name="payment" value="cash app">
+                Cash App
+            </label>
+        </div>
+        <div>
+        <p>Payments and registration will be completed on telegram. The purpose 
+            of this is to secure your information and maintian privacy
+        </p>
+      </div>
+       <a href="https://t.me/viponlyprivatechat" target="_blank">
+    <button>contact us on telegram </button>
+</a>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function showPayment() {
+            let methods = document.getElementsByName("payment");
+            let selected = "";
+
+            for (let i = 0; i < methods.length; i++) {
+                if (methods[i].checked) {
+                    selected = methods[i].value;
+                }
+            }
+
+            if (selected === "") {
+                document.getElementById("result").innerHTML =
+                    "Please select a payment method.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "You selected: " + selected;
+            }
+        }
+    </script>
+
+</body>
+</html>
